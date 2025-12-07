@@ -1,0 +1,148 @@
+\documentclass[letterpaper,10pt]{article}
+
+% Dependencies
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage[default]{sourcesanspro} % Sans-serif font
+
+% Colors
+\usepackage{xcolor}
+\definecolor{accentTitle}{HTML}{0e6e55}
+\definecolor{accentText}{HTML}{0e6e55}
+\definecolor{accentLine}{HTML}{a16f0b}
+
+% Page style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{3.7pt}
+\raggedbottom
+\raggedright
+
+% ATS Unicode
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Section Formatting
+\titleformat{\section}{
+  \vspace{-5pt}
+  \color{accentText}
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{accentLine}\titlerule]
+
+% Custom Commands
+\newcommand{\documentTitle}[2]{
+  \begin{center}
+    {\Huge\color{accentTitle} #1}
+    \vspace{10pt}
+    {\color{accentLine} \hrule}
+    \vspace{2pt}
+    \footnotesize{#2}
+    \vspace{2pt}
+    {\color{accentLine} \hrule}
+  \end{center}
+}
+
+% Job Heading
+\newcommand{\jobHeading}[3]{
+  \noindent\textbf{#1} — #2 \hfill \textit{#3} \\
+}
+
+% Bullet List Environment
+\newenvironment{resume_list}{
+  \vspace{-6pt}
+  \begin{itemize}[itemsep=2pt, leftmargin=18pt]
+}{\end{itemize}}
+
+\renewcommand\labelitemi{--}
+
+% ---------------- Document ----------------
+
+\begin{document}
+
+\documentTitle{{Anmol Kumar}}{
+    \href{tel:7838602045}{\raisebox{-0.15\height} \faMobile\ 7838602045} ~ | ~
+    \href{mailto:anmolnoida09@gmail.com}{\raisebox{-0.15\height} \faEnvelope\ anmolnoida09@gmail.com} ~ | ~
+    \href{www.linkedin.com/in/anmol-kumar-3b1323321}{\raisebox{-0.15\height} \faLinkedin\ linkedin.com/in/anmolkumar} ~ | ~
+    \href{https://github.com/anmoldotkr}{\raisebox{-0.15\height} \faGithub\ github.com/anmoldotkr}
+}
+
+\section{Summary}
+Results-oriented DevOps Engineer with 2+ years of experience specializing in AWS cloud infrastructure and CI/CD automation. Proficient in containerization using Docker and orchestrating pipelines with Jenkins and AWS CodePipeline. extensive experience in provisioning Infrastructure as Code (IaC) via CloudFormation and implementing Blue-Green deployment strategies to minimize downtime and streamline release cycles
+\section{Technical Skills}
+\begin{resume_list}
+  \item \textbf{Cloud:} AWS (S3, Lambda, EC2, CloudWatch, API Gateway, Route53, DynamoDB, code-Pipeline, ECS Fargate, RDS)
+  \item \textbf{DevOps:} Docker, smee.io, Nginx, Fluentd, Jenkins, Terraform, CloudFormation
+  \item \textbf{Programming:} Python, Shell/Bash, Node.js
+  \item \textbf{APIs \& Tools:} REST APIs, Postman, Git, Log Analysis, Debugging
+  \item \textbf{Monitoring:} ElasticSearch, CloudWatch
+  \item \textbf{Databases:} MySQL, MongoDB, DynamoDB
+\end{resume_list}
+
+\section{Professional Experience}
+
+
+\jobHeading{Jr DevOps Engineer}{Impressico Business Solutions, Noida}{Aug 2024 – Present}
+\begin{resume_list}
+  \item Managed and automated AWS infrastructure using Infrastructure as Code (IaC) and Jenkins, provi-
+sioning services including S3, CloudFront, ECS Fargate, ECR, Lambda, EC2, IAM, and VPC.
+  \item Replaced manual AWS resource creation with automated, version-controlled CloudFormation templates and
+CLI scripts, improving deployment speed, reliability, and consistency.
+   \item Implemented automated start/stop of AWS RDS and ECS services on weekends to optimize costs, integrated
+with Slack for real-time notifications.
+  \item Integrated Jenkins pipelines with Bitbucket webhooks using smee.io, enabling real-time automated builds upon code commits and pull requests.
+  \item Implemented Automated snapshot of Daily AMI Backup using Data Lifecycle Manager(DLM) service.
+  \item Configured automated build triggers in AWS CodePipeline for branch-specific code pushes, integrated with
+Slack notifications, reducing manual deployment efforts and improving CI/CD efficiency.
+\end{resume_list}
+\jobHeading{Software Engineering Intern}{Impressico Business Solutions, Noida}{Feb 2024 – Jul 2024}
+\begin{resume_list}
+  \item Created UI with React.js, integrating components with backend APIs to deliver seamless user experiences.
+  \item Built REST APIs using Node.js (Express) for a microservices-based analytics tool.
+  \item Deployed applications on AWS using EC2, S3, CloudWatch; configured Nginx for load balancing and high
+availability.
+\end{resume_list}
+
+\section{Key Projects}
+\begin{resume_list}
+  \item A full-stack MERN application to manage books with CRUD, rating, and filter features. Deployed using Kubernetes and Minikube, with services containerized and orchestrated via YAML configurations. \href{https://github.com/anmoldotkr/BookApp}{\bfseries [GitHub]}
+  \item Implemented CI/CD using CloudFormation; reduced deployment time from 30min to 6min. \href{https://github.com/anmoldotkr/ECS_CFT}{\bfseries [GitHub]}
+  \item AI-powered code review tool built with Gemini API to analyze GitHub pull requests. 
+Generates review comments using NLP, improves PR quality, and integrates with GitHub workflows. \href{https://github.com/anmoldotkr/Code-Reviewer}{\bfseries [GitHub]}
+  \item CDN caching via CloudFront improved load speed by 65\%; reduced infra cost by 75\%.
+\end{resume_list}
+
+\section{Education}
+\jobHeading{Bachelor of Application}{IIMT Group of Management}{2021 – 2024}
+\begin{resume_list}
+  \item CGPA: 6.8
+\end{resume_list}
+
+\section{Certifications \& Achievements}
+\begin{resume_list}
+  \item \textbf{Certifications:} Git \& GitHub, Data Structures (Coursera), Palo Alto Cybersecurity Foundation, CCNAv7
+  \item \textbf{Achievements:} College Hackathon
+\end{resume_list}
+
+\end{document}
